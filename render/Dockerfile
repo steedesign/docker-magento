@@ -38,7 +38,7 @@ WORKDIR /var/www/html
 # -----------------------------
 RUN rm -f /etc/nginx/sites-enabled/default
 
-COPY render/nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # -----------------------------
 # PHP configuratie
@@ -49,13 +49,13 @@ RUN echo "memory_limit=2G" > /usr/local/etc/php/conf.d/memory.ini \
 # -----------------------------
 # Installatie scripts toevoegen
 # -----------------------------
-COPY render/install-magento.sh /usr/local/bin/install-magento
+COPY install-magento.sh /usr/local/bin/install-magento
 RUN chmod +x /usr/local/bin/install-magento
 
 # -----------------------------
 # Start script
 # -----------------------------
-COPY render/start.sh /usr/local/bin/start-server
+COPY start.sh /usr/local/bin/start-server
 RUN chmod +x /usr/local/bin/start-server
 
 EXPOSE 80
