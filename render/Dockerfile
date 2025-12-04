@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
     libxslt1-dev \
     procps \
     nano \
-    && docker-php-ext-install intl xsl zip soap bcmath pdo_mysql gd ftp
+    && docker-php-ext-install intl xsl zip soap bcmath pdo_mysql gd ftp sockets
 
 # -----------------------------
 # Composer installeren
